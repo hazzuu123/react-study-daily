@@ -1,5 +1,6 @@
+import Buttons from "./SVG/Buttons";
 function App() {
-  return <div className="App"></div>;
+  return <Buttons />;
 }
 
 export default App;
