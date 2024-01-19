@@ -8,21 +8,23 @@ const Buttons = () => {
 
   /** 버튼 Hover 일 때 그라데이션 색 변경 */
   const handleButtonColor = (index, isHovered) => {
-    console.log(index);
     setButtonsHover((prev) => {
       const newHover = [...prev];
       newHover[index] = isHovered;
       return newHover;
     });
   };
+
   return (
     <div className="App">
       {/* 헤더 버튼 3개 */}
-      <ul className="flex">
+      <div className="flex">
+        {/* 쿠폰 버튼 */}
         <Button
           icon={
             <CouponIcon
               stroke={
+                // 마우스가 호버될 때는 그라데이션, 해제될 때는 그레이
                 buttonsHover[0] ? "url(#paint0_linear_306_2405)" : "#747474"
               }
             />
@@ -31,6 +33,7 @@ const Buttons = () => {
           index={0}
           handleButtonColor={handleButtonColor}
         />
+        {/* 관심상점 버튼 */}
         <Button
           icon={
             <HeartIcon
@@ -43,6 +46,7 @@ const Buttons = () => {
           index={1}
           handleButtonColor={handleButtonColor}
         />
+        {/* 마이 버튼 */}
         <Button
           icon={
             <MyPageIcon
@@ -55,20 +59,23 @@ const Buttons = () => {
           index={2}
           handleButtonColor={handleButtonColor}
         />
-      </ul>
+      </div>
     </div>
   );
 };
 
-//** 헤더 버튼 */
+//** 'Button': 버튼이 호버될 때와 호버가 해제될 때 색상을 변경한다 */
 const Button = ({ icon, label, index, handleButtonColor }) => {
   return (
+    // 버튼 요소에 마우스 진입시와 마우스 이탈시 handleButtonColor 함수를 호출하여 hover 상태를 갱신
     <button
       onMouseEnter={() => handleButtonColor(index, true)}
       onMouseLeave={() => handleButtonColor(index, false)}
       className="flex flex-col items-center  w-14 h-12 text-[#19191980] hover:text-[#FF0069] text-sm "
     >
+      {/* 아이콘 */}
       {icon}
+      {/* 텍스트 */}
       <p> {label}</p>
     </button>
   );
