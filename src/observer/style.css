@@ -1,0 +1,14 @@
+body {
+  background: black;
+  height: 6000px;
+  font-family: "nanumsquare";
+}
+div {
+  margin-top: 1000px;
+  color: white;
+  text-align: center;
+  font-size: 2.125rem;
+  font-weight: bold;
+
+  transition: opacity 0.5s;
+}
