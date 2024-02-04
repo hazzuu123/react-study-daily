@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styles from "./InfiniteScroll.module.css";
 
+// TODO: IntersectionObserver 객체를 한번만 생성하도록 변경할 것!
 const InfiniteScroll = () => {
   const pageEndRef = useRef(null); // 페이지 끝을 나타내는 요소에 대한 참조
   const [items, setItems] = useState([]); // 가져올 아이템 리스트
