@@ -5,8 +5,9 @@ import UserInfo from "./hooks/useEffect/UserInfo";
 import Observer from "./observer/Observer";
 import CardList from "./CardList/CardList";
 import InfiniteScroll from "./infiniteScroll/InfiniteScroll";
+import InfiniteScroll2 from "./infiniteScroll/InfiniteScroll2";
 function App() {
-  return <InfiniteScroll />;
+  return <InfiniteScroll2 />;
 }
 
 export default App;
